@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOS Venture LLC | Residential Real Estate Investment & Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #06100A;
+      --dark:       #0B1A10;
+      --card:       #0F2016;
+      --border:     #1C3424;
+      --green:      #2E7D52;
+      --green-lt:   #3DA06A;
+      --green-glow: rgba(46,125,82,.18);
+      --green-dim:  rgba(46,125,82,.08);
+      --white:      #EEF5F1;
+      --muted:      #6B9E7E;
+      --text:       #B2CCBC;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px;
+      height: 76px;
+      background: rgba(6,16,10,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.7); }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 30px; height: 30px;
+      background: var(--green);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 800; color: #fff; letter-spacing: .04em;
+      font-family: var(--sans);
+    }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .25s;
+    }
+    .nav-links a:hover { color: var(--green-lt); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      font-size: .78rem !important;
+      letter-spacing: .12em !important;
+      transition: background .25s !important;
+    }
+    .nav-cta:hover { background: var(--green-lt) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: .3s; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 120px 60px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green-lt);
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 24px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+    }
+    .divider {
+      width: 56px; height: 2px;
+      background: var(--green);
+      margin-bottom: 30px;
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 140px 60px 80px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(6,16,10,.97) 0%, rgba(6,16,10,.85) 55%, rgba(11,26,16,.92) 100%),
+        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80') center/cover no-repeat;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(46,125,82,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(46,125,82,.05) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    /* subtle radial glow */
+    #home::after {
+      content: '';
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse, rgba(46,125,82,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 880px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--green-lt);
+      border: 1px solid rgba(46,125,82,.4);
+      background: rgba(46,125,82,.07);
+      padding: 8px 18px;
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+    .hero-badge::before {
+      content: '';
+      display: block; width: 6px; height: 6px;
+      background: var(--green-lt);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 32px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--green-lt);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text);
+      max-width: 620px;
+      line-height: 1.85;
+      margin-bottom: 52px;
+    }
+
+    .hero-ctas { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 16px 38px;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--green-lt); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(46,125,82,.5);
+      color: var(--green-lt);
+      padding: 16px 38px;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color .25s, background .25s, transform .2s;
+    }
+    .btn-outline:hover { border-color: var(--green-lt); background: rgba(46,125,82,.1); transform: translateY(-1px); }
+
+    .hero-stats {
+      display: flex; gap: 60px;
+      margin-top: 80px;
+      padding-top: 50px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--green-lt); }
+    .stat-label {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--dark); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-image-wrap { position: relative; }
+    .about-image-wrap img {
+      width: 100%; height: 520px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+      filter: brightness(.88) saturate(.8);
+    }
+    .about-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -18px; right: -18px;
+      width: 50%; height: 50%;
+      border: 2px solid var(--green);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    .about-values {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .value-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      padding: 20px 22px;
+      border-radius: 2px;
+    }
+    .value-item h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .value-item p { font-size: .85rem; color: var(--muted); }
+
+    /* ── WHAT WE DO ── */
+    #services { background: var(--black); }
+
+    .services-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 80px;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .asset-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .asset-type {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color .3s;
+    }
+    .asset-type:hover { border-color: var(--green); }
+    .asset-type-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .asset-type h4 { font-family: var(--serif); color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
+    .asset-type p { font-size: .8rem; color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 38px 32px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+    .service-card:hover { border-color: var(--green); transform: translateY(-4px); }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 50px; height: 50px;
+      background: var(--green-dim);
+      border: 1px solid rgba(46,125,82,.3);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 26px;
+    }
+    .service-icon svg { width: 22px; height: 22px; stroke: var(--green-lt); fill: none; stroke-width: 1.5; }
+    .service-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--white); margin-bottom: 14px; }
+    .service-card p { font-size: .87rem; color: var(--muted); line-height: 1.8; }
+
+    /* strategy tags */
+    .strategy-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag {
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green-lt);
+      background: var(--green-dim);
+      border: 1px solid rgba(46,125,82,.25);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--dark); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s;
+    }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(46,125,82,.5); }
+
+    .project-image {
+      width: 100%; height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%) brightness(.8) saturate(.85);
+      transition: filter .4s;
+    }
+    .project-card:hover .project-image { filter: grayscale(0%) brightness(.95) saturate(1); }
+
+    .project-body { padding: 26px; }
+    .project-type {
+      font-size: .68rem; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--green-lt); margin-bottom: 10px;
+    }
+    .project-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
+    .project-body p { font-size: .84rem; color: var(--muted); line-height: 1.7; }
+
+    .project-meta {
+      display: flex; gap: 14px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .meta-item { font-size: .74rem; color: var(--muted); }
+    .meta-item strong { color: var(--white); font-weight: 600; display: block; font-size: .85rem; }
+
+    /* ── WHY AOS ── */
+    #why { background: var(--black); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-list { margin-top: 44px; display: flex; flex-direction: column; gap: 24px; }
+    .why-item { display: flex; gap: 22px; align-items: flex-start; }
+    .why-num {
+      font-family: var(--serif); font-size: 2rem; font-weight: 700;
+      color: rgba(46,125,82,.3); line-height: 1; min-width: 42px;
+    }
+    .why-item-text h4 { font-family: var(--serif); font-size: 1.15rem; color: var(--white); margin-bottom: 6px; }
+    .why-item-text p { font-size: .87rem; color: var(--muted); line-height: 1.75; }
+
+    .why-image-col { position: relative; }
+    .why-image-col img { width: 100%; height: 580px; object-fit: cover; border-radius: 2px; filter: brightness(.75) saturate(.7); }
+    .why-image-col::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(6,16,10,.6) 0%, transparent 60%);
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    .why-badge {
+      position: absolute;
+      bottom: 36px; left: -30px;
+      background: var(--green);
+      color: #fff;
+      padding: 22px 28px;
+      border-radius: 2px;
+      box-shadow: 0 12px 40px rgba(46,125,82,.3);
+      z-index: 2;
+    }
+    .why-badge-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; line-height: 1; }
+    .why-badge-text { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; opacity: .85; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info { padding-top: 8px; }
+    .contact-methods { margin-top: 44px; display: flex; flex-direction: column; gap: 22px; }
+    .contact-method { display: flex; align-items: center; gap: 16px; }
+    .contact-method-icon {
+      width: 44px; height: 44px;
+      background: var(--green-dim);
+      border: 1px solid rgba(46,125,82,.25);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-method-icon svg { width: 18px; height: 18px; stroke: var(--green-lt); fill: none; stroke-width: 1.5; }
+    .contact-method-text { font-size: .88rem; color: var(--muted); }
+    .contact-method-text strong {
+      color: var(--white); display: block; font-size: .75rem;
+      letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 2px;
+    }
+
+    .who-we-work { margin-top: 48px; padding: 30px; background: var(--card); border: 1px solid var(--border); border-radius: 2px; }
+    .who-we-work h4 { font-family: var(--serif); color: var(--white); font-size: 1.1rem; margin-bottom: 16px; }
+    .partner-list { display: flex; flex-direction: column; gap: 10px; }
+    .partner-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .84rem; color: var(--muted);
+    }
+    .partner-item::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 48px;
+      border-radius: 2px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: .72rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 13px 16px;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .25s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--green); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      font-family: var(--sans);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background .25s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--green-lt); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 60px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark { width: 26px; height: 26px; background: var(--green); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: .65rem; font-weight: 800; color: #fff; font-family: var(--sans); }
+    .footer-copy { font-size: .8rem; color: var(--muted); margin-top: 6px; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-size: .78rem; color: var(--muted); text-decoration: none; letter-spacing: .1em; transition: color .2s; }
+    .footer-links a:hover { color: var(--green-lt); }
+
+    /* ── NEWSLETTER ── */
+    #newsletter {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #newsletter::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(46,125,82,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(46,125,82,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    #newsletter::after {
+      content: '';
+      position: absolute;
+      top: -30%; right: -10%;
+      width: 50%; height: 120%;
+      background: radial-gradient(ellipse, rgba(46,125,82,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .newsletter-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .newsletter-perks {
+      display: flex; flex-direction: column; gap: 18px;
+      margin-top: 36px;
+    }
+    .newsletter-perk {
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .perk-dot {
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .perk-text { font-size: .9rem; color: var(--text); line-height: 1.6; }
+    .perk-text strong { color: var(--white); font-weight: 600; }
+
+    .newsletter-embed-col {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 48px 40px;
+      position: relative;
+    }
+    .newsletter-embed-col::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-lt), transparent);
+      border-radius: 4px 4px 0 0;
+    }
+    .newsletter-embed-col h3 {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .newsletter-embed-col p {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .beehiiv-wrap iframe {
+      width: 100% !important;
+      border: none !important;
+      border-radius: 2px;
+    }
+    .newsletter-fallback {
+      display: flex; gap: 10px;
+    }
+    .newsletter-fallback input {
+      flex: 1;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 13px 16px;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .25s;
+    }
+    .newsletter-fallback input:focus { border-color: var(--green); }
+    .newsletter-fallback input::placeholder { color: var(--muted); }
+    .newsletter-fallback a {
+      display: inline-flex; align-items: center;
+      background: var(--green);
+      color: #fff;
+      padding: 13px 22px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background .25s;
+    }
+    .newsletter-fallback a:hover { background: var(--green-lt); }
+    .newsletter-disclaimer {
+      font-size: .73rem;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .newsletter-inner { grid-template-columns: 1fr; gap: 50px; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      section { padding: 90px 40px; }
+      nav { padding: 0 40px; }
+      .about-grid, .why-grid, .contact-grid, .services-intro { grid-template-columns: 1fr; gap: 50px; }
+      .services-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .about-image-wrap img { height: 360px; }
+      .why-image-col { display: none; }
+      footer { padding: 50px 40px; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 80px 24px; }
+      #home { padding: 120px 24px 70px; }
+      .hero-stats { gap: 36px; }
+      .services-grid, .portfolio-grid, .asset-types { grid-template-columns: 1fr; }
+      .about-values { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 30px 22px; }
+      footer { padding: 40px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-mark">AOS</div>
+      Venture LLC
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#why">Why AOS</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-badge">Single Family &amp; Multifamily Real Estate</div>
+
+      <h1 class="hero-title">
+        We Acquire, Renovate,<br />
+        and Develop <em>Residential</em><br />
+        Real Estate That Lasts.
+      </h1>
+
+      <p class="hero-desc">
+        AOS Venture is a residential real estate investment and development platform specializing in single family homes, duplexes, and small multifamily properties. We identify undervalued assets, unlock their full potential through disciplined renovations and ground-up development, and grow a durable portfolio built for long-term cash flow and appreciation.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Partner With Us</a>
+        <a href="#services" class="btn-outline">Our Investment Strategy</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num"><span>$</span>10M<span style="font-size:1.8rem;">+</span></div>
+          <div class="stat-label">Assets Under Management</div>
+        </div>
+        <div>
+          <div class="stat-num"><span>25</span><span style="font-size:1.8rem;">+</span></div>
+          <div class="stat-label">Residential Units Acquired</div>
+        </div>
+        <div>
+          <div class="stat-num"><span>SFR</span></div>
+          <div class="stat-label">to Small Multifamily Focus</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap fade-up">
+          <img
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80"
+            alt="AOS Venture — Residential Real Estate"
+          />
+        </div>
+        <div class="fade-up">
+          <p class="section-label">About AOS Venture</p>
+          <div class="divider"></div>
+          <h2 class="section-title">A Residential Platform Built on Execution, Not Speculation</h2>
+          <p class="section-sub">
+            AOS Venture was built on one belief: the most reliable path to long-term wealth in real estate runs through disciplined residential investing. We focus exclusively on single family and multifamily residential assets — the markets we know best, where our operational edge creates the most value.
+          </p>
+          <p class="section-sub" style="margin-top:18px;">
+            We are operators first. From sourcing off-market single family deals to developing small multifamily infill projects, every decision at AOS Venture is grounded in conservative underwriting, hands-on management, and a commitment to building a lasting residential portfolio.
+          </p>
+
+          <div class="about-values">
+            <div class="value-item">
+              <h4>Conservative Underwriting</h4>
+              <p>Every deal is stress-tested. We model for worst-case scenarios before committing capital.</p>
+            </div>
+            <div class="value-item">
+              <h4>Operator Mindset</h4>
+              <p>We don't hand deals off. We manage acquisitions, renovations, and tenants ourselves.</p>
+            </div>
+            <div class="value-item">
+              <h4>Residential Specialists</h4>
+              <p>SFR and small multifamily is our lane. We know these assets and markets deeply.</p>
+            </div>
+            <div class="value-item">
+              <h4>Long-Term Portfolio View</h4>
+              <p>We build for durability — cash flow, appreciation, and equity compounding over time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section id="services">
+    <div class="container">
+
+      <!-- Asset type focus -->
+      <div class="services-intro fade-up">
+        <div>
+          <p class="section-label">What We Do</p>
+          <div class="divider"></div>
+          <h2 class="section-title">Focused on the Residential Opportunity</h2>
+          <p class="section-sub">
+            AOS Venture concentrates its capital and expertise in residential asset classes where execution skill and local market knowledge create the most durable returns.
+          </p>
+        </div>
+        <div class="asset-types">
+          <div class="asset-type">
+            <div class="asset-type-icon">🏠</div>
+            <h4>Single Family</h4>
+            <p>SFR acquisitions, value-add renovations, BRRRR strategy, and long-term rentals</p>
+          </div>
+          <div class="asset-type">
+            <div class="asset-type-icon">🏘️</div>
+            <h4>Small Multifamily</h4>
+            <p>Duplexes, triplexes, and 4-plexes — the sweet spot of scale and manageability</p>
+          </div>
+          <div class="asset-type">
+            <div class="asset-type-icon">🔨</div>
+            <h4>Value-Add</h4>
+            <p>Distressed and underperforming properties repositioned for maximum income</p>
+          </div>
+          <div class="asset-type">
+            <div class="asset-type-icon">🏗️</div>
+            <h4>New Construction</h4>
+            <p>Ground-up infill development of residential units in high-demand neighborhoods</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategy cards -->
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Acquisitions &amp; Deal Sourcing</h3>
+          <p>We target off-market and on-market single family and small multifamily properties through direct outreach, agent relationships, and investor networks. Every deal clears our underwriting criteria before we move.</p>
+          <div class="strategy-tags">
+            <span class="tag">Off-Market</span>
+            <span class="tag">SFR</span>
+            <span class="tag">2–4 Units</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Value-Add Renovations</h3>
+          <p>We acquire distressed single family and multifamily properties and execute targeted renovations to maximize rent, forced equity, and long-term asset value — on time and on budget.</p>
+          <div class="strategy-tags">
+            <span class="tag">BRRRR</span>
+            <span class="tag">Forced Equity</span>
+            <span class="tag">Repositioning</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Ground-Up Infill Development</h3>
+          <p>We develop new residential construction on infill lots — primarily duplexes, ADUs, and small multifamily buildings — capturing the full development margin while delivering housing where demand is highest.</p>
+          <div class="strategy-tags">
+            <span class="tag">Duplex</span>
+            <span class="tag">ADU</span>
+            <span class="tag">Infill</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Rental Portfolio Growth</h3>
+          <p>We systematically grow a diversified residential rental portfolio — single family homes alongside duplexes and small multifamily — building a reliable income engine that compounds over time.</p>
+          <div class="strategy-tags">
+            <span class="tag">Cash Flow</span>
+            <span class="tag">Buy &amp; Hold</span>
+            <span class="tag">Appreciation</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Asset Management &amp; Operations</h3>
+          <p>We operate our portfolio with the discipline of a professional management company — leasing, maintenance, vendor relationships, and financial reporting handled in-house to protect returns and resident quality.</p>
+          <div class="strategy-tags">
+            <span class="tag">Self-Managed</span>
+            <span class="tag">Systems-Driven</span>
+            <span class="tag">NOI Focused</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Capital &amp; Investor Partnerships</h3>
+          <p>We work with private lenders, hard money partners, and equity co-investors to fund acquisitions and development deals — with full transparency, aligned incentives, and consistent reporting.</p>
+          <div class="strategy-tags">
+            <span class="tag">Private Lending</span>
+            <span class="tag">JV Equity</span>
+            <span class="tag">Debt Partners</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Portfolio</p>
+        <div class="divider"></div>
+        <h2 class="section-title">Selected Projects &amp; Case Studies</h2>
+        <p class="section-sub">A look at how AOS Venture acquires, improves, and grows residential real estate assets across our target markets.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="project-card fade-up">
+          <img class="project-image"
+            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80"
+            alt="Single Family BRRRR" />
+          <div class="project-body">
+            <div class="project-type">Single Family · BRRRR Strategy</div>
+            <h3>Off-Market SFR Acquisition &amp; Renovation</h3>
+            <p>Sourced a distressed single-family home off-market, completed a full interior renovation, refinanced to return capital, and stabilized as a long-term rental generating well above-market rents.</p>
+            <div class="project-meta">
+              <div class="meta-item"><strong>$185K</strong>Purchase Price</div>
+              <div class="meta-item"><strong>$48K</strong>Renovation</div>
+              <div class="meta-item"><strong>$290K</strong>ARV</div>
+              <div class="meta-item"><strong>32%</strong>Equity Gain</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <img class="project-image"
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80"
+            alt="Duplex Development" />
+          <div class="project-body">
+            <div class="project-type">Multifamily · New Construction</div>
+            <h3>Infill Duplex Development</h3>
+            <p>Acquired an underutilized infill lot, designed and permitted a two-unit residential building, managed construction, and delivered fully leased with strong cash-on-cash returns at stabilization.</p>
+            <div class="project-meta">
+              <div class="meta-item"><strong>$95K</strong>Land</div>
+              <div class="meta-item"><strong>$310K</strong>Build Cost</div>
+              <div class="meta-item"><strong>9.2%</strong>Cap Rate</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <img class="project-image"
+            src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=700&q=80"
+            alt="Small Multifamily Portfolio" />
+          <div class="project-body">
+            <div class="project-type">Portfolio · Buy &amp; Hold</div>
+            <h3>Residential Rental Portfolio</h3>
+            <p>Assembled a growing portfolio of single family and duplex rentals through systematic acquisition and professional management, creating a scalable, income-producing residential platform.</p>
+            <div class="project-meta">
+              <div class="meta-item"><strong>6+</strong>Properties</div>
+              <div class="meta-item"><strong>$1.4M</strong>Portfolio Value</div>
+              <div class="meta-item"><strong>100%</strong>Occupied</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY AOS ===== -->
+  <section id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <p class="section-label">Why AOS Venture</p>
+          <div class="divider"></div>
+          <h2 class="section-title">Serious Operators. Long-Term Partners.</h2>
+          <p class="section-sub">
+            In a market full of passive capital and opportunistic flippers, AOS Venture is built as a long-term residential real estate business — disciplined, operator-led, and designed to scale.
+          </p>
+
+          <div class="why-list">
+            <div class="why-item fade-up">
+              <div class="why-num">01</div>
+              <div class="why-item-text">
+                <h4>Residential Depth &amp; Focus</h4>
+                <p>We don't try to do everything. Our expertise is single family and small multifamily residential — we know these asset classes, their submarkets, and their risks deeply.</p>
+              </div>
+            </div>
+            <div class="why-item fade-up">
+              <div class="why-num">02</div>
+              <div class="why-item-text">
+                <h4>Disciplined Underwriting on Every Deal</h4>
+                <p>Every acquisition is run through a rigorous underwriting process. We model conservatively, stress-test our assumptions, and only move when the risk-adjusted return justifies the capital.</p>
+              </div>
+            </div>
+            <div class="why-item fade-up">
+              <div class="why-num">03</div>
+              <div class="why-item-text">
+                <h4>Hands-On from Acquisition to Operations</h4>
+                <p>We manage every stage in-house — from identifying deals and overseeing renovations to placing residents and managing the long-term asset. No outsourcing of the work that matters most.</p>
+              </div>
+            </div>
+            <div class="why-item fade-up">
+              <div class="why-num">04</div>
+              <div class="why-item-text">
+                <h4>Built to Scale Systematically</h4>
+                <p>We have invested in the operational infrastructure — systems, processes, and relationships — that allow us to add assets efficiently without sacrificing execution quality as the portfolio grows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-image-col">
+          <img
+            src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&q=80"
+            alt="AOS Venture Residential Real Estate"
+          />
+          <div class="why-badge">
+            <div class="why-badge-num">100%</div>
+            <div class="why-badge-text">Owner-Operated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+
+        <div class="fade-up">
+          <p class="section-label">Daily Newsletter</p>
+          <div class="divider"></div>
+          <h2 class="section-title">Stay Ahead of the Market</h2>
+          <p class="section-sub">
+            Every morning, AOS Venture publishes a free daily briefing covering residential real estate trends, deal flow, market data, and investment insights — written for operators and investors who want an edge.
+          </p>
+          <div class="newsletter-perks">
+            <div class="newsletter-perk">
+              <div class="perk-dot"></div>
+              <div class="perk-text"><strong>Daily market briefings</strong> — SFR and multifamily trends, rates, and data that matter</div>
+            </div>
+            <div class="newsletter-perk">
+              <div class="perk-dot"></div>
+              <div class="perk-text"><strong>Deal flow insights</strong> — what's moving, what's stalling, and where the opportunities are</div>
+            </div>
+            <div class="newsletter-perk">
+              <div class="perk-dot"></div>
+              <div class="perk-text"><strong>Operator perspective</strong> — no fluff, just the real numbers and lessons from active acquisitions</div>
+            </div>
+            <div class="newsletter-perk">
+              <div class="perk-dot"></div>
+              <div class="perk-text"><strong>100% free</strong> — join investors, brokers, and lenders who read every morning</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter-embed-col fade-up">
+          <h3>Get the Daily Briefing</h3>
+          <p>Join the AOS Venture newsletter. Delivered every morning, free forever.</p>
+
+          <!-- Beehiiv embedded subscribe form -->
+          <div class="beehiiv-wrap">
+            <iframe
+              src="https://embeds.beehiiv.com/9c5cd6f4-d8b7-4b31-884e-c93f5e2d0574?slim=true"
+              data-test-id="beehiiv-embed"
+              height="52"
+              frameborder="0"
+              scrolling="no"
+              style="width:100%;border-radius:2px;border:1px solid #1C3424;background:transparent;">
+            </iframe>
+          </div>
+
+          <!-- Fallback direct link -->
+          <div style="margin-top:18px; text-align:center;">
+            <a href="https://aos-venture.beehiiv.com/subscribe" target="_blank" style="font-size:.78rem; color:var(--muted); text-decoration:none; letter-spacing:.08em;">
+              Or subscribe on Beehiiv →
+            </a>
+          </div>
+
+          <p class="newsletter-disclaimer">
+            No spam. Unsubscribe at any time. By subscribing you agree to Beehiiv's terms of service.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <p class="section-label">Partner With Us</p>
+          <div class="divider"></div>
+          <h2 class="section-title">Let's Build Something Together</h2>
+          <p class="section-sub">
+            AOS Venture is actively acquiring single family and multifamily properties and looking for the right capital partners, deal sources, and strategic relationships to grow alongside.
+          </p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <strong>Email</strong>
+                aaron.standish@aosventure.com
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <strong>Markets</strong>
+                Actively acquiring in target residential markets
+              </div>
+            </div>
+          </div>
+
+          <div class="who-we-work">
+            <h4>Who We Work With</h4>
+            <div class="partner-list">
+              <div class="partner-item">Private lenders &amp; hard money lenders</div>
+              <div class="partner-item">Equity investors &amp; capital partners</div>
+              <div class="partner-item">Agents &amp; brokers with off-market deals</div>
+              <div class="partner-item">General contractors &amp; subcontractors</div>
+              <div class="partner-item">Motivated sellers of single family &amp; multifamily</div>
+              <div class="partner-item">Property managers &amp; leasing professionals</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form fade-up">
+          <div style="margin-bottom:32px;">
+            <h3 style="font-family:var(--serif);font-size:1.6rem;color:var(--white);margin-bottom:8px;">Send Us a Message</h3>
+            <p style="font-size:.85rem;color:var(--muted);">We respond to all inquiries within 24–48 hours.</p>
+          </div>
+
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>I am a...</label>
+              <select>
+                <option value="">Select your role</option>
+                <option>Private Lender / Hard Money Lender</option>
+                <option>Equity Investor / Capital Partner</option>
+                <option>Real Estate Agent or Broker</option>
+                <option>General Contractor / Subcontractor</option>
+                <option>Property Manager</option>
+                <option>Motivated Seller (Single Family)</option>
+                <option>Motivated Seller (Multifamily)</option>
+                <option>Strategic Partner</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us about the opportunity, deal, or how you'd like to partner with AOS Venture..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message →</button>
+          </form>
+
+          <div id="form-success" style="display:none; margin-top:20px; padding:18px; background:rgba(46,125,82,.12); border:1px solid rgba(46,125,82,.35); border-radius:2px; color:var(--green-lt); font-size:.88rem; text-align:center;">
+            ✓ Message received. We'll be in touch within 24–48 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-mark">AOS</div>
+          Venture LLC
+        </div>
+        <div class="footer-copy">© 2026 AOS Venture LLC. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">What We Do</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    hamburger.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:rgba(6,16,10,.98);padding:24px;gap:18px;border-bottom:1px solid #1C3424;';
+      }
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
