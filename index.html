@@ -39,7 +39,7 @@
     ::-webkit-scrollbar-track { background: var(--dark); }
     ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ NAV ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
@@ -96,7 +96,7 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: .3s; }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ SECTION BASE ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── SECTION BASE ── */
     section { padding: 120px 60px; }
     .container { max-width: 1200px; margin: 0 auto; }
 
@@ -128,7 +128,7 @@
       margin-bottom: 30px;
     }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ HERO ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── HERO ── */
     #home {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -256,7 +256,7 @@
       margin-top: 6px;
     }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ ABOUT ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── ABOUT ── */
     #about { background: var(--dark); }
 
     .about-grid {
@@ -305,7 +305,7 @@
     }
     .value-item p { font-size: .85rem; color: var(--muted); }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ WHAT WE DO ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── WHAT WE DO ── */
     #services { background: var(--black); }
 
     .services-intro {
@@ -390,7 +390,7 @@
       border-radius: 2px;
     }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ PORTFOLIO ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── PORTFOLIO ── */
     #portfolio { background: var(--dark); }
 
     .portfolio-grid {
@@ -413,10 +413,10 @@
       width: 100%; height: 220px;
       object-fit: cover;
       display: block;
-      filter: grayscale(10%) brightness(.9) saturate(.9);
+      filter: grayscale(20%) brightness(.8) saturate(.85);
       transition: filter .4s;
     }
-    .project-card:hover .project-image { filter: grayscale(0%) brightness(1) saturate(1); }
+    .project-card:hover .project-image { filter: grayscale(0%) brightness(.95) saturate(1); }
 
     .project-body { padding: 26px; }
     .project-type {
@@ -436,7 +436,7 @@
     .meta-item { font-size: .74rem; color: var(--muted); }
     .meta-item strong { color: var(--white); font-weight: 600; display: block; font-size: .85rem; }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ WHY AOS ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── WHY AOS ── */
     #why { background: var(--black); }
 
     .why-grid {
@@ -478,7 +478,7 @@
     .why-badge-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; line-height: 1; }
     .why-badge-text { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; opacity: .85; }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ CONTACT ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── CONTACT ── */
     #contact { background: var(--dark); }
 
     .contact-grid {
@@ -572,7 +572,7 @@
     }
     .form-submit:hover { background: var(--green-lt); }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ FOOTER ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── FOOTER ── */
     footer {
       background: var(--black);
       border-top: 1px solid var(--border);
@@ -590,7 +590,7 @@
     .footer-links a { font-size: .78rem; color: var(--muted); text-decoration: none; letter-spacing: .1em; transition: color .2s; }
     .footer-links a:hover { color: var(--green-lt); }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ NEWSLETTER ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── NEWSLETTER ── */
     #newsletter {
       background: var(--dark);
       position: relative;
@@ -711,7 +711,7 @@
       .newsletter-inner { grid-template-columns: 1fr; gap: 50px; }
     }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ RESPONSIVE ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       section { padding: 90px 40px; }
       nav { padding: 0 40px; }
@@ -737,7 +737,7 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
-    /* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ ANIMATIONS ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */
+    /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
@@ -779,7 +779,7 @@
       </h1>
 
       <p class="hero-desc">
-        AOS Venture is a residential real estate investment and development platform specializing in single family homes, duplexes, and small multifamily properties. Operating across Texas &amp; Florida, we identify undervalued assets, unlock their full potential through disciplined renovations and ground-up development, and grow a durable portfolio built for long-term cash flow and appreciation.
+        AOS Venture is a residential real estate investment and development platform specializing in single family homes, duplexes, and small multifamily properties. We identify undervalued assets, unlock their full potential through disciplined renovations and ground-up development, and grow a durable portfolio built for long-term cash flow and appreciation.
       </p>
 
       <div class="hero-ctas">
@@ -797,8 +797,8 @@
           <div class="stat-label">Residential Units Acquired</div>
         </div>
         <div>
-          <div class="stat-num"><span>TX &amp; FL</span></div>
-          <div class="stat-label">Active Markets</div>
+          <div class="stat-num"><span>$</span>10M<span style="font-size:1.8rem;">+</span></div>
+          <div class="stat-label">Under Management</div>
         </div>
       </div>
     </div>
@@ -811,7 +811,7 @@
         <div class="about-image-wrap fade-up">
           <img
             src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80"
-            alt="AOS Venture ÃÂ¢ÃÂÃÂ Residential Real Estate"
+            alt="AOS Venture — Residential Real Estate"
           />
         </div>
         <div class="fade-up">
@@ -819,7 +819,7 @@
           <div class="divider"></div>
           <h2 class="section-title">A Residential Platform Built on Execution, Not Speculation</h2>
           <p class="section-sub">
-            AOS Venture was built on one belief: the most reliable path to long-term wealth in real estate runs through disciplined residential investing. We focus exclusively on single family and multifamily residential assets ÃÂ¢ÃÂÃÂ the markets we know best, where our operational edge creates the most value.
+            AOS Venture was built on one belief: the most reliable path to long-term wealth in real estate runs through disciplined residential investing. We focus exclusively on single family and multifamily residential assets — the markets we know best, where our operational edge creates the most value.
           </p>
           <p class="section-sub" style="margin-top:18px;">
             We are operators first. From sourcing off-market single family deals to developing small multifamily infill projects, every decision at AOS Venture is grounded in conservative underwriting, hands-on management, and a commitment to building a lasting residential portfolio.
@@ -840,7 +840,7 @@
             </div>
             <div class="value-item">
               <h4>Long-Term Portfolio View</h4>
-              <p>We build for durability ÃÂ¢ÃÂÃÂ cash flow, appreciation, and equity compounding over time.</p>
+              <p>We build for durability — cash flow, appreciation, and equity compounding over time.</p>
             </div>
           </div>
         </div>
@@ -864,22 +864,22 @@
         </div>
         <div class="asset-types">
           <div class="asset-type">
-            <div class="asset-type-icon">ÃÂ°ÃÂÃÂÃÂ </div>
+            <div class="asset-type-icon">🏠</div>
             <h4>Single Family</h4>
             <p>SFR acquisitions, value-add renovations, BRRRR strategy, and long-term rentals</p>
           </div>
           <div class="asset-type">
-            <div class="asset-type-icon">ÃÂ°ÃÂÃÂÃÂÃÂ¯ÃÂ¸ÃÂ</div>
+            <div class="asset-type-icon">🏘️</div>
             <h4>Small Multifamily</h4>
-            <p>Duplexes, triplexes, and 4-plexes ÃÂ¢ÃÂÃÂ the sweet spot of scale and manageability</p>
+            <p>Duplexes, triplexes, and 4-plexes — the sweet spot of scale and manageability</p>
           </div>
           <div class="asset-type">
-            <div class="asset-type-icon">ÃÂ°ÃÂÃÂÃÂ¨</div>
+            <div class="asset-type-icon">🔨</div>
             <h4>Value-Add</h4>
             <p>Distressed and underperforming properties repositioned for maximum income</p>
           </div>
           <div class="asset-type">
-            <div class="asset-type-icon">ÃÂ°ÃÂÃÂÃÂÃÂ¯ÃÂ¸ÃÂ</div>
+            <div class="asset-type-icon">🏗️</div>
             <h4>New Construction</h4>
             <p>Ground-up infill development of residential units in high-demand neighborhoods</p>
           </div>
@@ -898,7 +898,7 @@
           <div class="strategy-tags">
             <span class="tag">Off-Market</span>
             <span class="tag">SFR</span>
-            <span class="tag">2ÃÂ¢ÃÂÃÂ4 Units</span>
+            <span class="tag">2–4 Units</span>
           </div>
         </div>
 
@@ -907,7 +907,7 @@
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Value-Add Renovations</h3>
-          <p>We acquire distressed single family and multifamily properties and execute targeted renovations to maximize rent, forced equity, and long-term asset value ÃÂ¢ÃÂÃÂ on time and on budget.</p>
+          <p>We acquire distressed single family and multifamily properties and execute targeted renovations to maximize rent, forced equity, and long-term asset value — on time and on budget.</p>
           <div class="strategy-tags">
             <span class="tag">BRRRR</span>
             <span class="tag">Forced Equity</span>
@@ -920,7 +920,7 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>Ground-Up Infill Development</h3>
-          <p>We develop new residential construction on infill lots ÃÂ¢ÃÂÃÂ primarily duplexes, ADUs, and small multifamily buildings ÃÂ¢ÃÂÃÂ capturing the full development margin while delivering housing where demand is highest.</p>
+          <p>We develop new residential construction on infill lots — primarily duplexes, ADUs, and small multifamily buildings — capturing the full development margin while delivering housing where demand is highest.</p>
           <div class="strategy-tags">
             <span class="tag">Duplex</span>
             <span class="tag">ADU</span>
@@ -933,7 +933,7 @@
             <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
           <h3>Rental Portfolio Growth</h3>
-          <p>We systematically grow a diversified residential rental portfolio ÃÂ¢ÃÂÃÂ single family homes alongside duplexes and small multifamily ÃÂ¢ÃÂÃÂ building a reliable income engine that compounds over time.</p>
+          <p>We systematically grow a diversified residential rental portfolio — single family homes alongside duplexes and small multifamily — building a reliable income engine that compounds over time.</p>
           <div class="strategy-tags">
             <span class="tag">Cash Flow</span>
             <span class="tag">Buy &amp; Hold</span>
@@ -946,7 +946,7 @@
             <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
           <h3>Asset Management &amp; Operations</h3>
-          <p>We operate our portfolio with the discipline of a professional management company ÃÂ¢ÃÂÃÂ leasing, maintenance, vendor relationships, and financial reporting handled in-house to protect returns and resident quality.</p>
+          <p>We operate our portfolio with the discipline of a professional management company — leasing, maintenance, vendor relationships, and financial reporting handled in-house to protect returns and resident quality.</p>
           <div class="strategy-tags">
             <span class="tag">Self-Managed</span>
             <span class="tag">Systems-Driven</span>
@@ -959,7 +959,7 @@
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3>Capital &amp; Investor Partnerships</h3>
-          <p>We work with private lenders, hard money partners, and equity co-investors to fund acquisitions and development deals ÃÂ¢ÃÂÃÂ with full transparency, aligned incentives, and consistent reporting.</p>
+          <p>We work with private lenders, hard money partners, and equity co-investors to fund acquisitions and development deals — with full transparency, aligned incentives, and consistent reporting.</p>
           <div class="strategy-tags">
             <span class="tag">Private Lending</span>
             <span class="tag">JV Equity</span>
@@ -985,17 +985,17 @@
 
         <div class="project-card fade-up">
           <img class="project-image"
-            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80"
-            alt="Single Family BRRRR" />
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80"
+            alt="3358 Broadway Ave — Off-Market SFR Acquisition &amp; Renovation" />
           <div class="project-body">
-            <div class="project-type">Single Family ÃÂÃÂ· BRRRR Strategy</div>
+            <div class="project-type">Single Family · BRRRR Strategy</div>
             <h3>Off-Market SFR Acquisition &amp; Renovation</h3>
-            <p>Sourced a distressed single-family home off-market, completed a full interior renovation, refinanced to return capital, and stabilized as a long-term rental generating well above-market rents.</p>
+            <p>3358 Broadway Ave — sourced entirely off-market, acquired for $51K, fully renovated top to bottom with $95K in improvements. Appraised at $250K post-renovation and rented immediately at $2,400/month.</p>
             <div class="project-meta">
-              <div class="meta-item"><strong>$185K</strong>Purchase Price</div>
-              <div class="meta-item"><strong>$48K</strong>Renovation</div>
-              <div class="meta-item"><strong>$290K</strong>ARV</div>
-              <div class="meta-item"><strong>32%</strong>Equity Gain</div>
+              <div class="meta-item"><strong>$51K</strong>Acquired Off-Market</div>
+              <div class="meta-item"><strong>$95K</strong>Full Renovation</div>
+              <div class="meta-item"><strong>$250K</strong>Appraised Value</div>
+              <div class="meta-item"><strong>$2,400/mo</strong>Rent</div>
             </div>
           </div>
         </div>
@@ -1005,7 +1005,7 @@
             src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80"
             alt="Duplex Development" />
           <div class="project-body">
-            <div class="project-type">Multifamily ÃÂÃÂ· New Construction</div>
+            <div class="project-type">Multifamily · New Construction</div>
             <h3>Infill Duplex Development</h3>
             <p>Acquired an underutilized infill lot, designed and permitted a two-unit residential building, managed construction, and delivered fully leased with strong cash-on-cash returns at stabilization.</p>
             <div class="project-meta">
@@ -1021,13 +1021,30 @@
             src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=700&q=80"
             alt="Small Multifamily Portfolio" />
           <div class="project-body">
-            <div class="project-type">Portfolio ÃÂÃÂ· Buy &amp; Hold</div>
+            <div class="project-type">Portfolio · Buy &amp; Hold</div>
             <h3>Residential Rental Portfolio</h3>
             <p>Assembled a growing portfolio of single family and duplex rentals through systematic acquisition and professional management, creating a scalable, income-producing residential platform.</p>
             <div class="project-meta">
-              <div class="meta-item"><strong>38+</strong>Properties</div>
-              <div class="meta-item"><strong>$10M+</strong>Portfolio Value</div>
+              <div class="meta-item"><strong>6+</strong>Properties</div>
+              <div class="meta-item"><strong>$1.4M</strong>Portfolio Value</div>
               <div class="meta-item"><strong>100%</strong>Occupied</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <img class="project-image"
+            src="https://images.unsplash.com/photo-1503594384566-461fe158e797?w=700&q=80"
+            alt="Single Family Development — Build to Rent" />
+          <div class="project-body">
+            <div class="project-type">Single Family · Build to Rent</div>
+            <h3>Single Family Development Program</h3>
+            <p>Developing new single family homes across markets from Jacksonville to Vero Beach — sourcing infill lots, managing ground-up construction, and stabilizing as long-term rentals. Four completed projects with 15 homes currently in the pipeline.</p>
+            <div class="project-meta">
+              <div class="meta-item"><strong>4</strong>Completed</div>
+              <div class="meta-item"><strong>$1M</strong>Total Build Cost</div>
+              <div class="meta-item"><strong>$1.5M</strong>Asset Value</div>
+              <div class="meta-item"><strong>15</strong>In Pipeline</div>
             </div>
           </div>
         </div>
@@ -1045,7 +1062,7 @@
           <div class="divider"></div>
           <h2 class="section-title">Serious Operators. Long-Term Partners.</h2>
           <p class="section-sub">
-            In a market full of passive capital and opportunistic flippers, AOS Venture is built as a long-term residential real estate business ÃÂ¢ÃÂÃÂ disciplined, operator-led, and designed to scale.
+            In a market full of passive capital and opportunistic flippers, AOS Venture is built as a long-term residential real estate business — disciplined, operator-led, and designed to scale.
           </p>
 
           <div class="why-list">
@@ -1053,7 +1070,7 @@
               <div class="why-num">01</div>
               <div class="why-item-text">
                 <h4>Residential Depth &amp; Focus</h4>
-                <p>We don't try to do everything. Our expertise is single family and small multifamily residential ÃÂ¢ÃÂÃÂ we know these asset classes, their submarkets, and their risks deeply.</p>
+                <p>We don't try to do everything. Our expertise is single family and small multifamily residential — we know these asset classes, their submarkets, and their risks deeply.</p>
               </div>
             </div>
             <div class="why-item fade-up">
@@ -1067,14 +1084,14 @@
               <div class="why-num">03</div>
               <div class="why-item-text">
                 <h4>Hands-On from Acquisition to Operations</h4>
-                <p>We manage every stage in-house ÃÂ¢ÃÂÃÂ from identifying deals and overseeing renovations to placing residents and managing the long-term asset. No outsourcing of the work that matters most.</p>
+                <p>We manage every stage in-house — from identifying deals and overseeing renovations to placing residents and managing the long-term asset. No outsourcing of the work that matters most.</p>
               </div>
             </div>
             <div class="why-item fade-up">
               <div class="why-num">04</div>
               <div class="why-item-text">
                 <h4>Built to Scale Systematically</h4>
-                <p>We have invested in the operational infrastructure ÃÂ¢ÃÂÃÂ systems, processes, and relationships ÃÂ¢ÃÂÃÂ that allow us to add assets efficiently without sacrificing execution quality as the portfolio grows.</p>
+                <p>We have invested in the operational infrastructure — systems, processes, and relationships — that allow us to add assets efficiently without sacrificing execution quality as the portfolio grows.</p>
               </div>
             </div>
           </div>
@@ -1104,24 +1121,24 @@
           <div class="divider"></div>
           <h2 class="section-title">Stay Ahead of the Market</h2>
           <p class="section-sub">
-            Every morning, AOS Venture publishes a free daily briefing covering residential real estate trends, deal flow, market data, and investment insights ÃÂ¢ÃÂÃÂ written for operators and investors who want an edge.
+            Every morning, AOS Venture publishes a free daily briefing covering residential real estate trends, deal flow, market data, and investment insights — written for operators and investors who want an edge.
           </p>
           <div class="newsletter-perks">
             <div class="newsletter-perk">
               <div class="perk-dot"></div>
-              <div class="perk-text"><strong>Daily market briefings</strong> ÃÂ¢ÃÂÃÂ SFR and multifamily trends, rates, and data that matter</div>
+              <div class="perk-text"><strong>Daily market briefings</strong> — SFR and multifamily trends, rates, and data that matter</div>
             </div>
             <div class="newsletter-perk">
               <div class="perk-dot"></div>
-              <div class="perk-text"><strong>Deal flow insights</strong> ÃÂ¢ÃÂÃÂ what's moving, what's stalling, and where the opportunities are</div>
+              <div class="perk-text"><strong>Deal flow insights</strong> — what's moving, what's stalling, and where the opportunities are</div>
             </div>
             <div class="newsletter-perk">
               <div class="perk-dot"></div>
-              <div class="perk-text"><strong>Operator perspective</strong> ÃÂ¢ÃÂÃÂ no fluff, just the real numbers and lessons from active acquisitions</div>
+              <div class="perk-text"><strong>Operator perspective</strong> — no fluff, just the real numbers and lessons from active acquisitions</div>
             </div>
             <div class="newsletter-perk">
               <div class="perk-dot"></div>
-              <div class="perk-text"><strong>100% free</strong> ÃÂ¢ÃÂÃÂ join investors, brokers, and lenders who read every morning</div>
+              <div class="perk-text"><strong>100% free</strong> — join investors, brokers, and lenders who read every morning</div>
             </div>
           </div>
         </div>
@@ -1132,19 +1149,20 @@
 
           <!-- Beehiiv embedded subscribe form -->
           <div class="beehiiv-wrap">
-            <form class="newsletter-native-form" action="https://aos-venture.beehiiv.com/subscribe" method="GET" target="_blank">
-                <div class="newsletter-fallback">
-                  <input type="email" name="email" placeholder="your@email.com" required />
-                  <button type="submit" class="btn-primary">Subscribe Free Ã¢ÂÂ</button>
-                </div>
-                <p style="font-size:.75rem;color:var(--muted);margin-top:10px;">No spam. Unsubscribe any time. <a href="https://aos-venture.beehiiv.com" target="_blank" style="color:var(--green-lt);text-decoration:none;">View past issues Ã¢ÂÂ</a></p>
-              </form>
+            <iframe
+              src="https://embeds.beehiiv.com/9c5cd6f4-d8b7-4b31-884e-c93f5e2d0574?slim=true"
+              data-test-id="beehiiv-embed"
+              height="52"
+              frameborder="0"
+              scrolling="no"
+              style="width:100%;border-radius:2px;border:1px solid #1C3424;background:transparent;">
+            </iframe>
           </div>
 
           <!-- Fallback direct link -->
           <div style="margin-top:18px; text-align:center;">
             <a href="https://aos-venture.beehiiv.com/subscribe" target="_blank" style="font-size:.78rem; color:var(--muted); text-decoration:none; letter-spacing:.08em;">
-              Or subscribe on Beehiiv ÃÂ¢ÃÂÃÂ
+              Or subscribe on Beehiiv →
             </a>
           </div>
 
@@ -1175,7 +1193,7 @@
                 <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div class="contact-method-text">
-                <strong>Email</strong>
+                   <strong>Email</strong>
                 aaron.standish@aosventure.com
               </div>
             </div>
@@ -1206,27 +1224,27 @@
         <div class="contact-form fade-up">
           <div style="margin-bottom:32px;">
             <h3 style="font-family:var(--serif);font-size:1.6rem;color:var(--white);margin-bottom:8px;">Send Us a Message</h3>
-            <p style="font-size:.85rem;color:var(--muted);">We respond to all inquiries within 24ÃÂ¢ÃÂÃÂ48 hours.</p>
+            <p style="font-size:.85rem;color:var(--muted);">We respond to all inquiries within 24–48 hours.</p>
           </div>
 
-          <form onsubmit="handleSubmit(event)">
+          <form onsubmit="handleSubmit(event)" id="contact-form">
             <div class="form-row">
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="John" required />
+                <input type="text" name="first_name" placeholder="John" required />
               </div>
               <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" placeholder="Smith" required />
+                <input type="text" name="last_name" placeholder="Smith" required />
               </div>
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="john@example.com" required />
+              <input type="email" name="email" placeholder="john@example.com" required />
             </div>
             <div class="form-group">
               <label>I am a...</label>
-              <select>
+              <select name="role">
                 <option value="">Select your role</option>
                 <option>Private Lender / Hard Money Lender</option>
                 <option>Equity Investor / Capital Partner</option>
@@ -1241,13 +1259,13 @@
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea placeholder="Tell us about the opportunity, deal, or how you'd like to partner with AOS Venture..."></textarea>
+              <textarea name="message" placeholder="Tell us about the opportunity, deal, or how you'd like to partner with AOS Venture..."></textarea>
             </div>
-            <button type="submit" class="form-submit">Send Message ÃÂ¢ÃÂÃÂ</button>
+            <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
           </form>
 
           <div id="form-success" style="display:none; margin-top:20px; padding:18px; background:rgba(46,125,82,.12); border:1px solid rgba(46,125,82,.35); border-radius:2px; color:var(--green-lt); font-size:.88rem; text-align:center;">
-            ÃÂ¢ÃÂÃÂ Message received. We'll be in touch within 24ÃÂ¢ÃÂÃÂ48 hours.
+            ✓ Message received. We'll be in touch within 24–48 hours.
           </div>
         </div>
       </div>
@@ -1262,7 +1280,7 @@
           <div class="footer-logo-mark">AOS</div>
           Venture LLC
         </div>
-        <div class="footer-copy">ÃÂÃÂ© 2026 AOS Venture LLC. All rights reserved.</div>
+        <div class="footer-copy">© 2026 AOS Venture LLC. All rights reserved.</div>
       </div>
       <div class="footer-links">
         <a href="#about">About</a>
@@ -1281,13 +1299,19 @@
     });
 
     const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
-      const links = document.querySelector('.nav-links');
-      if (links.style.display === 'flex') {
-        links.style.display = 'none';
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
       } else {
-        links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:rgba(6,16,10,.98);padding:24px;gap:18px;border-bottom:1px solid #1C3424;';
+        navLinks.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:rgba(6,16,10,.98);padding:24px;gap:18px;border-bottom:1px solid #1C3424;';
       }
+    });
+    // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) navLinks.style.display = 'none';
+      });
     });
 
     const fadeEls = document.querySelectorAll('.fade-up');
@@ -1301,10 +1325,49 @@
     }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('form-success').style.display = 'block';
-      e.target.reset();
+      const form = e.target;
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      const data = new FormData(form);
+      const body = Object.fromEntries(data.entries());
+      try {
+        // Send via mailto fallback with formatted body
+        const subject = encodeURIComponent('AOS Venture Website Inquiry from ' + body.first_name + ' ' + body.last_name);
+        const mailBody = encodeURIComponent(
+          'Name: ' + body.first_name + ' ' + body.last_name + '\n' +
+          'Email: ' + body.email + '\n' +
+          'Role: ' + (body.role || 'Not specified') + '\n\n' +
+          'Message:\n' + (body.message || 'No message provided')
+        );
+        // Try Web3Forms first (free tier)
+        const resp = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'YOUR_WEB3FORMS_KEY',
+            subject: 'AOS Venture Website Inquiry from ' + body.first_name + ' ' + body.last_name,
+            from_name: body.first_name + ' ' + body.last_name,
+            replyto: body.email,
+            ...body
+          })
+        }).catch(() => null);
+        if (resp && resp.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          form.reset();
+        } else {
+          // Fallback: open email client
+          window.location.href = 'mailto:aaron.standish@aosventure.com?subject=' + subject + '&body=' + mailBody;
+          document.getElementById('form-success').style.display = 'block';
+          form.reset();
+        }
+      } catch (err) {
+        window.location.href = 'mailto:aaron.standish@aosventure.com';
+      }
+      btn.textContent = 'Send Message \u2192';
+      btn.disabled = false;
     }
   </script>
 </body>
